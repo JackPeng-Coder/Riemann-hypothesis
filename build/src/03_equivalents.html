@@ -1,0 +1,123 @@
+<section class="chapter" id="ch03">
+  <div class="chapter-head">
+    <div class="num">03</div>
+    <div class="kicker">Chapter Three</div>
+    <h1>精确陈述与等价形式</h1>
+    <div class="en">Equivalent Formulations</div>
+  </div>
+
+  <p class="lead">黎曼猜想有许多张面孔。它可以是复平面上的一条线，可以是素数计数的一个误差项，可以是一个正性条件，也可以是一道初等的不等式。它们看起来毫不相干，却在逻辑上完全等价。</p>
+
+  <h2>3.1　一句话陈述</h2>
+
+  <p>黎曼 ζ 函数的非平凡零点，全部满足</p>
+
+  <div class="eq"><div class="tag">(3.1)</div>
+  \[ \operatorname{Re}(\rho)=\tfrac12. \]
+  </div>
+
+  <p>等价地：\(\zeta(s)\) 在 \(\operatorname{Re}(s)&gt;1/2\) 时没有零点。注意这里的“非平凡”不能省：平凡零点 \(-2,-4,-6,\dots\) 都在实轴上，不在临界带内。黎曼猜想不否认它们，只否认临界带里存在任何偏离临界线的零点。</p>
+
+  <h2>3.2　六种等价形式</h2>
+
+  <h3>（一）素数计数的误差项</h3>
+
+  <p>设 \(\operatorname{li}(x)=\int_{2}^{x}dt/\log t\) 为对数积分。黎曼猜想等价于</p>
+
+  <div class="eq"><div class="tag">(3.2)</div>
+  \[ \pi(x)=\operatorname{li}(x)+O\!\left(\sqrt{x}\,\log x\right), \]
+  </div>
+
+  <p>也等价于加权形式</p>
+
+  <div class="eq"><div class="tag">(3.3)</div>
+  \[ \psi(x)=x+O\!\left(\sqrt{x}\,(\log x)^{2}\right). \]
+  </div>
+
+  <p>这是最直观的一张面孔：素数的实际个数与“最佳近似” \(\operatorname{li}(x)\) 之间的偏差，被压在 \(\sqrt{x}\log x\) 以内。由于 \(\pi(x)\) 本身只有 \(x/\log x\) 量级，这个误差相对于主项是 \(O(\sqrt{x}\log^2 x/x)=O(\log^3 x/\sqrt{x})\)，随着 \(x\) 增大迅速趋于零。用概率的语言说，素数比“随机”还要守规矩。</p>
+
+  <h3>（二）Mertens 函数</h3>
+
+  <p>设 \(\mu(n)\) 为 Möbius 函数，\(M(x)=\sum_{n\le x}\mu(n)\)。黎曼猜想等价于：对任意 \(\varepsilon&gt;0\)，</p>
+
+  <div class="eq"><div class="tag">(3.4)</div>
+  \[ M(x)=O\!\left(x^{1/2+\varepsilon}\right). \]
+  </div>
+
+  <p>\(M(x)\) 记录的是不超过 \(x\) 的整数中，素因子个数为偶数与奇数的“带符号计数”。它比 \(\pi(x)\) 更敏感，也更适合用概率方法处理。把 \(M(x)\) 看成随机游走，\(\sqrt{x}\) 正是独立随机变量的标准差；黎曼猜想说，这个随机游走不能系统性地偏离原点超过一个很小的幂次。</p>
+
+  <h3>（三）Li 准则</h3>
+
+  <p>定义 Li 系数</p>
+
+  <div class="eq"><div class="tag">(3.5)</div>
+  \[ \lambda_n=\sum_{\rho}\left[1-\left(1-\frac{1}{\rho}\right)^{n}\right],\qquad n=1,2,\dots \]
+  </div>
+
+  <p>其中求和遍历所有非平凡零点。黎曼猜想等价于</p>
+
+  <div class="eq"><div class="tag">(3.6)</div>
+  \[ \lambda_n\ge 0\qquad \text{对所有 } n\ge 1. \]
+  </div>
+
+  <p>Li 准则的美感在于，它把“零点在哪里”转化成一列实数的符号问题。每一个 \(\lambda_n\) 都可以用 ζ 函数在 1 附近的高阶导数显式表示，因此原则上可以计算。困难在于：要证明所有 \(n\) 都非负，仍然需要控制无穷多个零点。</p>
+
+  <h3>（四）Weil 正性</h3>
+
+  <p>对适当的检验函数 \(f\)，定义 Weil 泛函</p>
+
+  <div class="eq"><div class="tag">(3.7)</div>
+  \[ W(f)=\sum_{\rho}\hat f(\rho), \]
+  </div>
+
+  <p>其中 \(\hat f\) 是 \(f\) 的 Mellin 变换。黎曼猜想等价于：在满足 \(f(x)=\overline{f(1/x)}\) 的适当函数空间上，\(W(f)\ge 0\)。这是“正性”路线的源头：如果能构造出一个正定的 Hilbert 空间，使 \(W\) 成为某个自伴算子的谱测度，黎曼猜想就会像“自伴算子特征值必为实数”一样自动成立。</p>
+
+  <h3>（五）Nyman–Beurling 逼近</h3>
+
+  <p>在 \(L^{2}(0,1)\) 中，对 \(0&lt;\theta\le 1\) 定义</p>
+
+  <div class="eq"><div class="tag">(3.8)</div>
+  \[ \rho_{\theta}(x)=\left\{\frac{\theta}{x}\right\}-\theta\left\{\frac{1}{x}\right\}, \]
+  </div>
+
+  <p>其中 \(\{y\}\) 表示小数部分。黎曼猜想等价于：这些 \(\rho_{\theta}\) 的线性组合在 \(L^{2}(0,1)\) 中稠密，或者说常数函数 1 可以被它们任意精确地逼近。这条路线把数论问题变成了算子理论与逼近论问题：零点对应某个算子谱的实部，逼近的误差对应“谱隙”。</p>
+
+  <h3>（六）Lagarias 初等判别</h3>
+
+  <p>设 \(\sigma(n)\) 为 \(n\) 的正因子之和，\(H_n=1+\tfrac12+\cdots+\tfrac1n\) 为调和数。黎曼猜想等价于：对所有 \(n\ge 1\)，</p>
+
+  <div class="eq"><div class="tag">(3.9)</div>
+  \[ \sigma(n)\le H_n+e^{H_n}\log H_n. \]
+  </div>
+
+  <p>这是目前已知最“初等”的等价形式之一：不等式中只出现整数、因子和与调和数，没有任何复分析。但它并不因此更容易证明；把解析困难翻译成初等语言，并不会让困难消失，只是换了一种说法。</p>
+
+  <h2>3.3　等价的代价与价值</h2>
+
+  <p>这些等价形式说明，黎曼猜想不是一个孤立的复分析技巧问题，而是横跨解析数论、概率、算子代数、逼近论与初等数论的一个“枢纽”。它的价值在于：任何一条路线上的突破，都会立刻转化为其他语言中的定理；它的代价在于：每条路线都继承了同一个核心困难，只是把困难藏在了不同的地方。</p>
+
+  <table>
+    <thead><tr><th style="width:18%">等价形式</th><th style="width:22%">领域</th><th>核心困难</th></tr></thead>
+    <tbody>
+      <tr><td class="k">π(x) 误差</td><td>解析数论</td><td>需要排除任意高度的零点偏离，等价于控制显式公式中的振荡</td></tr>
+      <tr><td class="k">Mertens 函数</td><td>概率数论</td><td>Möbius 函数的符号抵消极难控制；Mertens 猜想已被推翻，说明“看起来对”不等于对</td></tr>
+      <tr><td class="k">Li 系数</td><td>复分析</td><td>需要证明无穷多个显式可算的量全部非负</td></tr>
+      <tr><td class="k">Weil 正性</td><td>算子理论</td><td>缺少一个具体的正定结构或自伴算子</td></tr>
+      <tr><td class="k">Nyman–Beurling</td><td>逼近论</td><td>稠密性的定量估计与零点分布互为表里</td></tr>
+      <tr><td class="k">Lagarias 不等式</td><td>初等数论</td><td>形式初等，但需要对所有 n 一致控制因子和</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3.4　三种常见误读</h2>
+
+  <p><strong>误读一：“黎曼猜想说素数是随机的。”</strong> 恰恰相反。它说的是素数的分布受到极强的约束，误差比独立随机模型还小。素数的“随机”只是局部表象；黎曼猜想是这种随机性背后的刚性。</p>
+
+  <p><strong>误读二：“黎曼猜想说素数均匀分布。”</strong> 它并不直接说素数在短区间里均匀，而是说 \(\pi(x)\) 与 \(\operatorname{li}(x)\) 的偏差很小。素数间隙的精细结构（比如孪生素数猜想）并不由 RH 直接推出。</p>
+
+  <p><strong>误读三：“只要算得足够多，就能证明它。”</strong> 数值验证只能排除有限高度内的反例。一个反例可能出现在 \(10^{100}\) 甚至更高的地方；而证明需要对所有高度一致地排除。第 8 章会讲一个著名的教训：Mertens 猜想在数值上成立了很久，最终被证明是错的。</p>
+
+  <div class="box">
+    <span class="label">记住这一点</span>
+    <p>黎曼猜想不是“关于复数的猜想”，而是“关于素数分布的误差有多小”的猜想。复数只是把这个问题写成可计算、可分析的形式。所有等价形式都在说同一件事：素数的分布不能比 \(\sqrt{x}\) 尺度更“任性”。</p>
+  </div>
+</section>

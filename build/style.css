@@ -1,0 +1,509 @@
+:root {
+  --navy: #16283f;
+  --navy-soft: #2c4260;
+  --copper: #9a6b2f;
+  --copper-light: #c9a875;
+  --wine: #7a1f2b;
+  --ink: #1c2430;
+  --muted: #5c6775;
+  --rule: #d8d2c4;
+  --cream: #f6f2e9;
+  --cream-2: #fbf8f1;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  font-family: "Cambria", "Microsoft YaHei", "Segoe UI", serif;
+  font-size: 10.4pt;
+  line-height: 1.78;
+  color: var(--ink);
+  text-align: justify;
+  text-justify: inter-ideograph;
+  orphans: 2;
+  widows: 2;
+}
+
+p {
+  margin: 0 0 0.52em 0;
+  text-indent: 2em;
+}
+
+p.noindent, .lead, li p, td p, .box p, .quote p, figcaption p {
+  text-indent: 0;
+}
+
+strong { color: var(--navy); font-weight: 700; }
+em { font-style: italic; }
+
+/* ------------------------------------------------ chapter opener */
+.chapter {
+  break-before: page;
+}
+
+.chapter-head {
+  position: relative;
+  margin: 0 0 22px 0;
+  padding: 26px 0 16px 0;
+  border-bottom: 1.6pt solid var(--navy);
+}
+
+.chapter-head .num {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  font-family: "Cambria", serif;
+  font-weight: 700;
+  font-size: 64pt;
+  line-height: 0.85;
+  color: #e8e1d2;
+  letter-spacing: -0.04em;
+}
+
+.chapter-head .kicker {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 7.6pt;
+  letter-spacing: 0.24em;
+  color: var(--copper);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.chapter-head h1 {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 22.5pt;
+  line-height: 1.28;
+  color: var(--navy);
+  margin: 2px 0 5px 0;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  max-width: 82%;
+}
+
+.chapter-head .en {
+  font-family: "Cambria", serif;
+  font-style: italic;
+  font-size: 10pt;
+  color: var(--muted);
+  max-width: 80%;
+}
+
+/* ------------------------------------------------ headings */
+h2 {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 14pt;
+  line-height: 1.4;
+  color: var(--navy);
+  margin: 1.65em 0 0.55em 0;
+  padding-left: 10px;
+  border-left: 3.2pt solid var(--copper);
+  break-after: avoid;
+}
+
+h3 {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 11.3pt;
+  color: var(--navy);
+  margin: 1.2em 0 0.35em 0;
+  break-after: avoid;
+}
+
+h4 {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 10.3pt;
+  color: var(--copper);
+  margin: 1em 0 0.25em 0;
+  break-after: avoid;
+}
+
+/* ------------------------------------------------ lead & quote */
+.lead {
+  font-size: 11pt;
+  line-height: 1.85;
+  color: #2b3644;
+  margin-bottom: 0.9em;
+}
+
+.lead::first-letter {
+  font-family: "Cambria", serif;
+  font-size: 2.2em;
+  line-height: 0.9;
+  color: var(--copper);
+  font-weight: 700;
+  padding-right: 1px;
+}
+
+.lead.nodrop::first-letter {
+  font-family: inherit;
+  font-size: 1em;
+  line-height: inherit;
+  color: inherit;
+  font-weight: inherit;
+  padding-right: 0;
+}
+
+.pull {
+  margin: 1.2em 3em;
+  padding: 14px 0;
+  border-top: 0.8pt solid var(--rule);
+  border-bottom: 0.8pt solid var(--rule);
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 11pt;
+  line-height: 1.75;
+  color: var(--navy);
+  text-align: center;
+  text-indent: 0;
+  break-inside: avoid;
+}
+
+.quote {
+  margin: 1em 0 1em 2em;
+  padding-left: 14px;
+  border-left: 2pt solid var(--copper-light);
+  color: #37424f;
+  font-size: 9.8pt;
+}
+
+.quote .who {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 8.8pt;
+  text-align: right;
+}
+
+/* ------------------------------------------------ boxes */
+.box {
+  background: var(--cream);
+  border-left: 3.2pt solid var(--copper);
+  padding: 12px 16px 10px 16px;
+  margin: 1em 0 1.1em 0;
+  font-size: 9.6pt;
+  line-height: 1.72;
+  break-inside: avoid;
+}
+
+.box .label {
+  display: block;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 7.8pt;
+  letter-spacing: 0.18em;
+  color: var(--copper);
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.box.warn {
+  background: #fbf1f2;
+  border-left-color: var(--wine);
+}
+
+.box.warn .label { color: var(--wine); }
+
+.box.plain {
+  background: var(--cream-2);
+  border: 0.7pt solid var(--rule);
+  border-left: 3.2pt solid var(--navy);
+}
+
+.box.plain .label { color: var(--navy); }
+
+.box p { margin-bottom: 0.35em; }
+.box ul { margin: 4px 0 4px 0; }
+
+/* ------------------------------------------------ figures */
+figure {
+  margin: 1.15em 0 1.2em 0;
+  text-align: center;
+  break-inside: avoid;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+figure.w92 img { width: 92%; }
+figure.w85 img { width: 85%; }
+figure.w78 img { width: 78%; }
+figure.w70 img { width: 70%; }
+figure.w62 img { width: 62%; }
+figure.w60 img { width: 60%; }
+
+figcaption {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 8.4pt;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-top: 7px;
+  text-align: center;
+  text-indent: 0;
+}
+
+figcaption .fno {
+  color: var(--copper);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* ------------------------------------------------ tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.9em 0 1.1em 0;
+  font-size: 8.9pt;
+  line-height: 1.55;
+  break-inside: avoid;
+}
+
+table.long { break-inside: auto; }
+
+thead { display: table-header-group; }
+
+th {
+  background: var(--navy);
+  color: #fff;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-weight: 700;
+  font-size: 8.6pt;
+  text-align: left;
+  padding: 7px 8px;
+  border: none;
+}
+
+td {
+  padding: 6px 8px;
+  border-bottom: 0.5pt solid var(--rule);
+  vertical-align: top;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) td { background: #faf8f3; }
+
+td.k { color: var(--navy); font-weight: 700; white-space: nowrap; }
+td.c, th.c { text-align: center; }
+table .small { font-size: 8.2pt; color: var(--muted); }
+
+/* ------------------------------------------------ lists */
+ul, ol {
+  margin: 0.35em 0 0.7em 0;
+  padding-left: 2.1em;
+}
+
+li { margin-bottom: 0.22em; }
+
+ul.tight li { margin-bottom: 0.08em; }
+
+/* ------------------------------------------------ equations */
+.eq {
+  position: relative;
+  margin: 0.75em 0 0.85em 0;
+  break-inside: avoid;
+}
+
+.eq .tag {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Cambria", serif;
+  font-size: 9pt;
+  color: var(--muted);
+}
+
+mjx-container[display="true"] {
+  margin: 0.55em 0 !important;
+}
+
+/* ------------------------------------------------ front matter */
+.front-rule {
+  width: 46px;
+  height: 2.4pt;
+  background: var(--copper);
+  margin: 12px 0 18px 0;
+}
+
+.abstract-title {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 19pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 2px 0;
+}
+
+.abstract-sub {
+  font-family: "Cambria", serif;
+  font-style: italic;
+  font-size: 10.5pt;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.meta-line {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 8.2pt;
+  letter-spacing: 0.06em;
+  color: var(--copper);
+  margin-bottom: 18px;
+}
+
+.fact-table td:first-child {
+  width: 27%;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.stat-row {
+  display: flex;
+  gap: 10px;
+  margin: 14px 0 16px 0;
+}
+
+.stat {
+  flex: 1;
+  background: var(--cream);
+  border-top: 2.4pt solid var(--copper);
+  padding: 9px 10px 8px 10px;
+}
+
+.stat .n {
+  font-family: "Cambria", serif;
+  font-size: 17pt;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.15;
+}
+
+.stat .t {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 7.9pt;
+  color: var(--muted);
+  line-height: 1.45;
+  margin-top: 3px;
+}
+
+/* ------------------------------------------------ TOC */
+.toc-page {
+  break-before: page;
+  padding-top: 10mm;
+}
+
+.toc-title {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 20pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.toc-sub {
+  font-family: "Cambria", serif;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 10pt;
+  margin-bottom: 20px;
+}
+
+.toc {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc li {
+  display: flex;
+  align-items: baseline;
+  margin: 0 0 7px 0;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 10.2pt;
+}
+
+.toc li.app {
+  margin-left: 18px;
+  font-size: 9.3pt;
+  color: #37424f;
+}
+
+.toc .t { color: var(--navy); font-weight: 700; }
+.toc li.app .t { font-weight: 400; }
+.toc .cn { color: var(--muted); font-size: 8.6pt; font-weight: 400; margin-left: 6px; }
+.toc .dots {
+  flex: 1;
+  border-bottom: 0.7pt dotted #b9b0a0;
+  margin: 0 7px;
+  transform: translateY(-2px);
+}
+.toc .p {
+  font-family: "Cambria", serif;
+  font-size: 9.6pt;
+  color: var(--copper);
+  min-width: 20px;
+  text-align: right;
+}
+
+.toc-note {
+  margin-top: 24px;
+  padding-top: 10px;
+  border-top: 0.7pt solid var(--rule);
+  font-size: 8.4pt;
+  color: var(--muted);
+  text-indent: 0;
+}
+
+/* ------------------------------------------------ misc */
+.small { font-size: 8.8pt; color: var(--muted); }
+.center { text-align: center; text-indent: 0; }
+.nowrap { white-space: nowrap; }
+
+.kv {
+  font-family: "Cambria", serif;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.ref {
+  font-family: "Cambria", serif;
+  font-size: 7.2pt;
+  color: var(--copper);
+  vertical-align: super;
+  line-height: 0;
+}
+
+.section-rule {
+  border: none;
+  border-top: 0.7pt solid var(--rule);
+  margin: 1.5em 0;
+}
+
+.refs {
+  font-size: 8.1pt;
+  line-height: 1.56;
+  padding-left: 0;
+  list-style: none;
+}
+
+.refs li {
+  margin-bottom: 4px;
+  padding-left: 26px;
+  text-indent: -26px;
+  text-align: left;
+}
+
+.refs .no {
+  display: inline-block;
+  width: 22px;
+  color: var(--copper);
+  font-family: "Cambria", serif;
+}
+
+.zero-table { font-family: "Cambria", serif; font-size: 8.4pt; }
+.zero-table td { padding: 4px 7px; }

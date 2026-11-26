@@ -1,0 +1,57 @@
+<section class="frontmatter">
+  <div class="meta-line">综合研究报告　·　2026 年 11 月 26 日　·　第一版</div>
+  <div class="abstract-title">黎曼猜想：一页速览</div>
+  <div class="abstract-sub">The Riemann Hypothesis at a Glance</div>
+  <div class="front-rule"></div>
+
+  <p class="lead">这份报告试图回答三个问题：黎曼猜想究竟说了什么？一百六十七年来人类走到了哪一步？2026 年 11 月那两份“证明”到底意味着什么？</p>
+
+  <p>黎曼猜想是数学中最著名、也最容易被误传的未解问题。它断言：黎曼 ζ 函数的所有非平凡零点，都落在复平面上那条垂直的临界线 \(\operatorname{Re}(s)=\tfrac12\) 上。这句话看起来只关乎一个复变函数，却等价于关于素数分布的一条极精确的误差估计。素数看似随机，黎曼猜想说它们的“随机”受到一条严格的、几乎没有余地的规律约束。</p>
+
+  <div class="stat-row">
+    <div class="stat"><div class="n">167 年</div><div class="t">从 1859 年黎曼的八页论文，到 2026 年 11 月的形式化证明</div></div>
+    <div class="stat"><div class="n">10<sup>13</sup></div><div class="t">Gourdon 于 2004 年数值验证过的非平凡零点个数</div></div>
+    <div class="stat"><div class="n">3×10<sup>12</sup></div><div class="t">Platt–Trudgian 用区间算术严格验证到的高度</div></div>
+    <div class="stat"><div class="n">41.72%</div><div class="t">已被证明位于临界线上的零点比例下界（2020）</div></div>
+  </div>
+
+  <h2>关键事实</h2>
+  <table class="fact-table">
+    <tbody>
+      <tr><td>提出者与时间</td><td>Bernhard Riemann，1859 年，论文《论不超过给定大小的素数个数》</td></tr>
+      <tr><td>研究对象</td><td>黎曼 ζ 函数 \(\zeta(s)\) 的非平凡零点，即满足 \(0&lt;\operatorname{Re}(s)&lt;1\) 的零点</td></tr>
+      <tr><td>核心陈述</td><td>所有非平凡零点都满足 \(\operatorname{Re}(s)=\tfrac12\)</td></tr>
+      <tr><td>历史地位</td><td>Hilbert 第 8 问题的一部分；Clay 数学研究所七大千禧年大奖难题之一</td></tr>
+      <tr><td>数值证据</td><td>前 \(10^{13}\) 个零点均在临界线上；严格验证高度达到 \(3\times10^{12}\)，且这些零点都是单零点</td></tr>
+      <tr><td>已证部分结果</td><td>至少 41.72% 的零点在临界线上；无零区域、零点密度估计持续改进</td></tr>
+      <tr><td>函数域类比</td><td>对有限域上的曲线与簇，对应的“黎曼猜想”已由 Weil（1940 年代）与 Deligne（1974）证明</td></tr>
+      <tr><td>2026-11-20</td><td>Levent Alpöge 与 Claude 合作，发布约 1700 万行 Lean 形式化证明</td></tr>
+      <tr><td>2026-11-21</td><td>Lean FRO 与 Mathlib Initiative 联合认证：陈述与证明均通过机器检验</td></tr>
+      <tr><td>2026-11-20</td><td>Alessandro Masullo 的 940 页纯人工手稿《素数的音乐》同日公开，随后被指出多处错误</td></tr>
+      <tr><td>Clay 官方状态</td><td>仍列为 Active；奖项要求正式发表、两年审查与广泛接受，流程尚未启动</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2026 年 11 月：形式证明与人类手稿</h2>
+  <p>2026 年 11 月 20 日，Anthropic 的数学家 Levent Alpöge 在个人网站发布一份四页说明与十四个压缩包，其中包含 175,187 个 Lean 源文件、约 1700 万行代码，声称证明了黎曼猜想以及 Dirichlet L 函数上的广义黎曼猜想。次日，负责 Lean 证明助手与 Mathlib 数学库的两个社区发表联合声明，确认该形式证明通过四项关键检验：陈述正确、代码可编译、证明的正是标准陈述、证明通过多个独立内核。11 月 25 日，Luke Sernau 等人又发布了约 7.6 万行的压缩版，并在次日通过全部六内核复核。</p>
+  <p>同一天，美国数学学会主席 Ravi Vakil 以“仓促公告”为题，公开了 Alessandro Maria Masullo 耗时约十二年、940 页的纯人工手稿《素数的音乐》，声称证明数域上 Hecke L 函数的广义黎曼猜想。手稿公开约八小时后，即有数学家（其中一些借助 AI 审读）报告关键计算错误、无效推论与尚未写完的占位章节。Masullo 本人承认草稿远未达到投稿标准，导师 Brian Conrad 表示正在进行大幅修订。</p>
+
+  <h2>报告结构</h2>
+  <ul class="tight">
+    <li><strong>第 1–4 章　问题本身：</strong>素数之谜、ζ 函数与临界线、六种等价形式、为什么重要。</li>
+    <li><strong>第 5–9 章　历史与前沿：</strong>167 年攻坚史、谱解释与随机矩阵、函数域类比、数值验证、2024–2025 年的两条新路线。</li>
+    <li><strong>第 10 章　2026 年事件：</strong>Alpöge–Claude 形式化证明、Lean 认证机制、Sernau 压缩版、Masullo 手稿与 Clay 奖状态。</li>
+    <li><strong>第 11–13 章　后果与反思：</strong>如果成立、如果不成立、十个常见误解。</li>
+    <li><strong>附录 A–D：</strong>前 50 个零点、公式速查、167 年时间线、参考文献与可复现资源。</li>
+  </ul>
+
+  <div class="box warn">
+    <span class="label">必须区分的三件事</span>
+    <p><strong>形式证明通过机器检验</strong>，不等于<strong>人类已经理解并接受</strong>，更不等于<strong>Clay 千禧年奖已经颁发</strong>。Lean 认证的是一段形式代码相对于形式陈述的逻辑正确性；它依赖 Lean 内核、标准公理与 Mathlib 中陈述的忠实性。人类可读的证明重构、同行评审、以及数学界对其中新思想的消化，才刚刚开始。Clay 研究所所长 Martin Bridson 已表示，从公告到真正理解还有“漫长而艰难的路”。</p>
+  </div>
+
+  <div class="box plain">
+    <span class="label">阅读指南</span>
+    <p>第 1–4 章面向所有读者，解释猜想是什么、为什么重要；公式可以跳过，不影响阅读。第 5–9 章是历史与前沿，适合想了解“人类试过什么”的读者。第 10 章是 2026 年事件的完整记录与技术解释，也是本报告最新的部分。第 11–13 章讨论后果、反事实与常见误解。附录提供零点表、公式速查、详细时间线与参考文献。</p>
+  </div>
+</section>

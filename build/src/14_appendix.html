@@ -1,0 +1,159 @@
+<section class="chapter" id="appA">
+  <div class="chapter-head">
+    <div class="num">A</div>
+    <div class="kicker">Appendix A</div>
+    <h1>前 50 个非平凡零点</h1>
+    <div class="en">The First 50 Zeros</div>
+  </div>
+
+  <p class="lead">下表给出前 50 个非平凡零点 \(\rho_n=\tfrac12+i\gamma_n\) 的虚部。数值由 mpmath 以 30 位十进制精度计算，表中保留 9 位小数。</p>
+
+  <table class="zero-table long">
+    <thead><tr><th class="c" style="width:9%">n</th><th style="width:45%">γ<sub>n</sub></th><th style="width:23%">相邻间距</th><th>n</th><th>γ<sub>n</sub></th></tr></thead>
+    <tbody>
+<!--ZEROS50-->
+    </tbody>
+  </table>
+
+  <p class="small">注：零点按虚部从小到大排列。相邻间距是该零点与前一个零点的差。由于零点成对共轭，负虚部的零点不重复列出。前 50 个零点的虚部都落在 \(14.13\) 到 \(143.11\) 之间，全部位于临界线上。可以看到间距并不均匀：有的只有 1.77（第 9 与第 10 个），有的超过 6.88；这种“不均匀但有排斥”的分布，正是随机矩阵统计的入口。</p>
+</section>
+
+<section class="chapter" id="appB">
+  <div class="chapter-head">
+    <div class="num">B</div>
+    <div class="kicker">Appendix B</div>
+    <h1>关键公式与定理速查</h1>
+    <div class="en">Formula Sheet</div>
+  </div>
+
+  <p class="lead">本附录把全书出现的关键公式集中列出，便于查阅。公式按主题分组，不追求完整，只保留最常用的版本。</p>
+
+  <h2>B.1　ζ 函数</h2>
+  <table>
+    <thead><tr><th style="width:24%">名称</th><th style="width:48%">公式</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td class="k">定义</td><td>\(\zeta(s)=\sum_{n\ge1}n^{-s}\)</td><td>\(\operatorname{Re}(s)&gt;1\) 时绝对收敛</td></tr>
+      <tr><td class="k">欧拉乘积</td><td>\(\zeta(s)=\prod_{p}(1-p^{-s})^{-1}\)</td><td>算术基本定理的解析形式</td></tr>
+      <tr><td class="k">函数方程</td><td>\(\xi(s)=\xi(1-s)\)</td><td>\(\xi(s)=\tfrac12s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)\)</td></tr>
+      <tr><td class="k">平凡零点</td><td>\(s=-2,-4,-6,\dots\)</td><td>由 \(\Gamma(s/2)\) 的极点抵消产生</td></tr>
+      <tr><td class="k">零点计数</td><td>\(N(T)=\frac{T}{2\pi}\log\frac{T}{2\pi e}+\frac78+O(1/T)\)</td><td>Riemann–von Mangoldt 公式</td></tr>
+    </tbody>
+  </table>
+
+  <h2>B.2　素数分布</h2>
+  <table>
+    <thead><tr><th style="width:24%">名称</th><th style="width:48%">公式</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td class="k">素数定理</td><td>\(\pi(x)\sim x/\log x\)</td><td>Hadamard 与 de la Vallée Poussin，1896</td></tr>
+      <tr><td class="k">显式公式</td><td>\(\psi(x)=x-\sum_{\rho}x^{\rho}/\rho-\log(2\pi)-\tfrac12\log(1-x^{-2})\)</td><td>零点控制素数分布的误差</td></tr>
+      <tr><td class="k">RH 的误差形式</td><td>\(\pi(x)=\operatorname{li}(x)+O(\sqrt{x}\log x)\)</td><td>与 RH 等价</td></tr>
+      <tr><td class="k">Mertens 形式</td><td>\(M(x)=O(x^{1/2+\varepsilon})\)</td><td>与 RH 等价</td></tr>
+      <tr><td class="k">素数间隙</td><td>\(p_{n+1}-p_n=O(\sqrt{p_n}\log p_n)\)</td><td>RH 的推论</td></tr>
+    </tbody>
+  </table>
+
+  <h2>B.3　等价形式</h2>
+  <table>
+    <thead><tr><th style="width:24%">名称</th><th style="width:48%">公式 / 陈述</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Li 准则</td><td>\(\lambda_n=\sum_{\rho}[1-(1-1/\rho)^n]\ge0\)</td><td>对所有 \(n\ge1\) 成立</td></tr>
+      <tr><td class="k">Weil 正性</td><td>\(W(f)=\sum_{\rho}\hat f(\rho)\ge0\)</td><td>在适当的检验函数空间上</td></tr>
+      <tr><td class="k">Nyman–Beurling</td><td>\(\{\rho_{\theta}\}\) 在 \(L^2(0,1)\) 中稠密</td><td>\(\rho_{\theta}(x)=\{\theta/x\}-\theta\{1/x\}\)</td></tr>
+      <tr><td class="k">Lagarias</td><td>\(\sigma(n)\le H_n+e^{H_n}\log H_n\)</td><td>对所有 \(n\ge1\) 成立</td></tr>
+    </tbody>
+  </table>
+
+  <h2>B.4　无零区域与零点密度</h2>
+  <table>
+    <thead><tr><th style="width:26%">名称</th><th style="width:46%">公式</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td class="k">de la Vallée Poussin</td><td>\(\sigma&gt;1-c/\log t\)</td><td>1896，首个无零区域</td></tr>
+      <tr><td class="k">Vinogradov–Korobov</td><td>\(\sigma&gt;1-\frac{c}{(\log t)^{2/3}(\log\log t)^{1/3}}\)</td><td>1958，至今仍是最好的无条件结果之一</td></tr>
+      <tr><td class="k">Ingham 零点密度</td><td>\(N(\sigma,T)\ll T^{3(1-\sigma)/(2-\sigma)+\varepsilon}\)</td><td>1940</td></tr>
+      <tr><td class="k">Guth–Maynard</td><td>\(N(\sigma,T)\ll T^{30(1-\sigma)/13+o(1)}\)</td><td>2024，突破 3/4 壁垒</td></tr>
+    </tbody>
+  </table>
+
+  <h2>B.5　谱与随机矩阵</h2>
+  <table>
+    <thead><tr><th style="width:26%">名称</th><th style="width:46%">公式 / 陈述</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Hilbert–Pólya</td><td>\(\rho_n=\tfrac12+iE_n\)，\(E_n\) 为自伴算子特征值</td><td>若存在，RH 自动成立</td></tr>
+      <tr><td class="k">GUE 对关联</td><td>\(R_2(u)=1-(\sin\pi u/\pi u)^2\)</td><td>Montgomery 猜想，Dyson 识别</td></tr>
+      <tr><td class="k">Wigner surmise</td><td>\(p(s)=\frac{32}{\pi^2}s^2e^{-4s^2/\pi}\)</td><td>能级排斥的间距分布</td></tr>
+      <tr><td class="k">矩猜想</td><td>\(\frac1T\int_0^T|\zeta(\tfrac12+it)|^{2k}dt\sim c_k(\log T)^{k^2}\)</td><td>Keating–Snaith，2000</td></tr>
+    </tbody>
+  </table>
+
+  <h2>B.6　符号表</h2>
+  <table>
+    <thead><tr><th style="width:22%">符号</th><th>含义</th></tr></thead>
+    <tbody>
+      <tr><td class="k">\(\zeta(s)\)</td><td>黎曼 ζ 函数，\(s=\sigma+it\) 为复变量</td></tr>
+      <tr><td class="k">\(\rho=\beta+i\gamma\)</td><td>非平凡零点；\(\beta\) 为实部，\(\gamma\) 为虚部</td></tr>
+      <tr><td class="k">\(\gamma_n\)</td><td>第 \(n\) 个零点的虚部，按从小到大排列</td></tr>
+      <tr><td class="k">\(\xi(s)\)</td><td>完备 ζ 函数，满足 \(\xi(s)=\xi(1-s)\)</td></tr>
+      <tr><td class="k">\(\Gamma(s)\)</td><td>Gamma 函数，函数方程中的 Archimedean 因子</td></tr>
+      <tr><td class="k">\(\pi(x)\)</td><td>不超过 \(x\) 的素数个数</td></tr>
+      <tr><td class="k">\(\operatorname{li}(x)\)</td><td>对数积分，素数计数的最佳经典近似</td></tr>
+      <tr><td class="k">\(\psi(x)\)</td><td>von Mangoldt 加权素数幂计数函数</td></tr>
+      <tr><td class="k">\(\Lambda(n)\)</td><td>von Mangoldt 函数，素数幂处取 \(\log p\)</td></tr>
+      <tr><td class="k">\(\mu(n)\)</td><td>Möbius 函数，用于 Mertens 函数与欧拉乘积</td></tr>
+      <tr><td class="k">\(M(x)\)</td><td>Mertens 函数，\(\sum_{n\le x}\mu(n)\)</td></tr>
+      <tr><td class="k">\(N(\sigma,T)\)</td><td>临界带内 \(\operatorname{Re}(s)\ge\sigma\)、\(|\operatorname{Im}(s)|\le T\) 的零点个数</td></tr>
+      <tr><td class="k">\(N(T)\)</td><td>\(0&lt;\operatorname{Im}(\rho)\le T\) 的非平凡零点总数</td></tr>
+      <tr><td class="k">\(L(s,\chi)\)</td><td>Dirichlet L 函数，\(\chi\) 为 Dirichlet 特征</td></tr>
+      <tr><td class="k">RH / GRH</td><td>黎曼猜想 / 广义黎曼猜想</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="chapter" id="appC">
+  <div class="chapter-head">
+    <div class="num">C</div>
+    <div class="kicker">Appendix C</div>
+    <h1>167 年时间线</h1>
+    <div class="en">Timeline</div>
+  </div>
+
+  <p class="lead">1859 年，黎曼在柏林科学院提交了那篇八页论文；2026 年，一份 1700 万行的形式化证明让整个数学界失眠。下面这条时间线把两者之间的关键节点串起来。</p>
+
+  <table class="long">
+    <thead><tr><th style="width:13%">年份</th><th>事件</th></tr></thead>
+    <tbody>
+      <tr><td class="k">1859</td><td>黎曼发表《论不超过给定大小的素数个数》，提出 ζ 函数与零点猜想。</td></tr>
+      <tr><td class="k">1866</td><td>黎曼逝世，年仅 39 岁。</td></tr>
+      <tr><td class="k">1896</td><td>Hadamard 与 de la Vallée Poussin 独立证明素数定理，核心是 ζ 在 \(\operatorname{Re}(s)=1\) 上无零点。</td></tr>
+      <tr><td class="k">1900</td><td>Hilbert 在巴黎国际数学家大会上提出 23 个问题，黎曼猜想列入第 8 问题。</td></tr>
+      <tr><td class="k">1903</td><td>Gram 验证前 15 个零点。</td></tr>
+      <tr><td class="k">1914</td><td>Hardy 证明临界线上有无穷多个零点；Littlewood 证明 \(\pi(x)-\operatorname{li}(x)\) 无限次变号。</td></tr>
+      <tr><td class="k">1932</td><td>Siegel 在黎曼遗稿中发现 Riemann–Siegel 公式，为大规模计算奠基。</td></tr>
+      <tr><td class="k">1933</td><td>Skewes 给出 \(\pi(x)&gt;\operatorname{li}(x)\) 首次出现的巨大上界。</td></tr>
+      <tr><td class="k">1940</td><td>Ingham 证明零点密度估计，成为短区间素数问题的核心工具。</td></tr>
+      <tr><td class="k">1942</td><td>Selberg 证明临界线上的零点占正比例。</td></tr>
+      <tr><td class="k">1949</td><td>Erdős 与 Selberg 给出素数定理的初等证明。</td></tr>
+      <tr><td class="k">1953</td><td>Turing 提出严格验证零点的方法，奠定现代数值验证框架。</td></tr>
+      <tr><td class="k">1958</td><td>Vinogradov 与 Korobov 独立改进无零区域。</td></tr>
+      <tr><td class="k">1972</td><td>Montgomery 提出零点对关联猜想；Dyson 认出 GUE 对关联函数。</td></tr>
+      <tr><td class="k">1974</td><td>Levinson 把临界线比例推进到 \(1/3\)。</td></tr>
+      <tr><td class="k">1985</td><td>Odlyzko 与 te Riele 推翻 Mertens 猜想。</td></tr>
+      <tr><td class="k">1987</td><td>Odlyzko 的大规模计算显示零点间距与 GUE 高度吻合。</td></tr>
+      <tr><td class="k">1989</td><td>Conrey 证明超过 \(40.88\%\) 的零点在临界线上。</td></tr>
+      <tr><td class="k">1999</td><td>Berry–Keating 提出 \(H=xp\) 模型；Connes 提出迹公式/吸收谱框架。</td></tr>
+      <tr><td class="k">2000</td><td>Clay 数学研究所设立千禧年大奖，黎曼猜想入选。</td></tr>
+      <tr><td class="k">2001</td><td>Baker–Harman–Pintz 证明相邻素数间隙 \(O(p_n^{0.525})\)。</td></tr>
+      <tr><td class="k">2004</td><td>Gourdon 验证前 \(10^{13}\) 个零点，高度约 \(2.4\times10^{12}\)。</td></tr>
+      <tr><td class="k">2011</td><td>Bui–Conrey–Young 把临界线比例提高到 \(41.05\%\)。</td></tr>
+      <tr><td class="k">2020</td><td>Pratt–Robles–Zaharescu–Zeindler 把比例提高到 \(41.72\%\)。</td></tr>
+      <tr><td class="k">2021</td><td>Platt–Trudgian 用区间算术严格验证到高度 \(3\times10^{12}\)。</td></tr>
+      <tr><td class="k">2024</td><td>Guth–Maynard 突破零点密度的 3/4 壁垒，得到 \(N(\sigma,T)\ll T^{30(1-\sigma)/13+o(1)}\)。</td></tr>
+      <tr><td class="k">2025</td><td>Connes–Consani–Moscovici 发表《Zeta Spectral Triples》，提出谱三元组策略。</td></tr>
+      <tr><td class="k">2026-09</td><td>黎曼诞辰 200 周年；深圳举办纪念学术研讨会。</td></tr>
+      <tr><td class="k">2026-11-20</td><td>Alpöge 与 Claude 发布约 1700 万行 Lean 形式化证明；Vakil 公开 Masullo 940 页手稿。</td></tr>
+      <tr><td class="k">2026-11-21</td><td>Lean FRO 与 Mathlib Initiative 联合认证形式证明；学界报告 Masullo 手稿错误。</td></tr>
+      <tr><td class="k">2026-11-23</td><td>Clay 研究所仍将问题列为 Active，奖项流程未启动。</td></tr>
+      <tr><td class="k">2026-11-25</td><td>Sernau 等发布 7.6 万行压缩版 Lean 证明。</td></tr>
+      <tr><td class="k">2026-11-26</td><td>压缩版通过六个独立内核复核；Alpöge 原版仍为正式记录。</td></tr>
+    </tbody>
+  </table>
+</section>

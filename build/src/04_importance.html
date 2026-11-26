@@ -1,0 +1,95 @@
+<section class="chapter" id="ch04">
+  <div class="chapter-head">
+    <div class="num">04</div>
+    <div class="kicker">Chapter Four</div>
+    <h1>为什么重要</h1>
+    <div class="en">Why It Matters</div>
+  </div>
+
+  <p class="lead">一个关于复变函数零点的问题，为什么会成为整个数学的“北极星”？答案不在于零点本身，而在于它控制着素数分布的误差、成百上千条条件性定理，以及我们对“随机”与“规律”的理解。</p>
+
+  <h2>4.1　素数定理的误差项</h2>
+
+  <p>素数定理 \(\pi(x)\sim x/\log x\) 只告诉我们主项。更好的近似是对数积分 \(\operatorname{li}(x)\)，它在 \(x=10^6\) 时给出 78627，而实际 \(\pi(10^6)=78498\)，误差只有 129。黎曼猜想等价于把这个误差压到 \(\sqrt{x}\log x\) 量级：</p>
+
+  <div class="eq"><div class="tag">(4.1)</div>
+  \[ \pi(x)=\operatorname{li}(x)+O\!\left(\sqrt{x}\log x\right). \]
+  </div>
+
+  <p>无条件的已知最好结果来自 Korobov 与 Vinogradov（1958）：</p>
+
+  <div class="eq"><div class="tag">(4.2)</div>
+  \[ \pi(x)=\operatorname{li}(x)+O\!\left(x\exp\!\left(-\frac{c(\log x)^{3/5}}{(\log\log x)^{1/5}}\right)\right). \]
+  </div>
+
+  <p>这个误差比 \(x\) 小，但比 \(\sqrt{x}\) 大得多。把两者的比值画出来，差距是数量级上的：在 \(x=10^{100}\) 时，\(\sqrt{x}=10^{50}\)，而 Korobov–Vinogradov 的误差仍然接近 \(x\) 的某个正比例幂。黎曼猜想不是“改进常数”，而是把误差直接降到理论下限。</p>
+
+  <figure>
+    <img src="figs/fig3_primes.png" alt="π(x) 与 li(x)、R(x) 的对比">
+    <figcaption><span class="fno">图 4-1</span>　上：实际素数计数 \(\pi(x)\) 与 \(\operatorname{li}(x)\)、黎曼 R 函数 \(R(x)\) 的对比（横轴对数坐标）。下：两种近似的误差。\(R(x)\) 通过 \(\zeta\) 的零点修正了 \(\operatorname{li}(x)\)，在 \(10^6\) 范围内已经把误差压到几十以内。黎曼猜想要证明的，是这种修正可以在所有尺度上一致地控制。</figcaption>
+  </figure>
+
+  <p>为什么 \(1/2\) 是理论下限？因为显式公式中的每一个零点都贡献一个 \(x^{\beta}\) 量级的振荡。如果所有 \(\beta=1/2\)，振幅就是 \(\sqrt{x}\)；而且这些振荡确实存在，不能被更小的幂次统一压住。所以黎曼猜想不仅给出上界，它还断言这个上界已经是最优的。任何试图把误差改进到 \(x^{1/2-\varepsilon}\) 的努力，都会与零点本身的存在性冲突。</p>
+
+  <h2>4.2　素数间隙与短区间</h2>
+
+  <p>黎曼猜想还能控制相邻素数之间的间隙。若 RH 成立，则</p>
+
+  <div class="eq"><div class="tag">(4.3)</div>
+  \[ p_{n+1}-p_n=O\!\left(\sqrt{p_n}\,\log p_n\right). \]
+  </div>
+
+  <p>无条件下，目前最好的间隙上界是 Baker–Harman–Pintz（2001）的 \(O(p_n^{0.525})\)。这个指数离 \(1/2\) 已经很近，但方法与 RH 路线不同，而且常数巨大。更精细的猜想（Cramér 猜想）预测间隙只有 \(O(\log^2 p_n)\)，比 RH 给出的 \(\sqrt{p_n}\log p_n\) 小得多；RH 并不蕴含 Cramér 猜想。</p>
+
+  <p>短区间是另一个窗口。RH 可以推出：在 \([x,x+\sqrt{x}\log x]\) 中必有素数。无条件下，2024 年 Guth 与 Maynard 的新方法把“必有素数”的区间长度推进到 \(x^{17/30+o(1)}\)（详见第 9 章）。这类结果直接关系到“素数在局部如何分布”，也是零点密度估计最著名的应用之一。</p>
+
+  <h2>4.3　算术级数与广义黎曼猜想</h2>
+
+  <p>黎曼猜想有一个自然的推广。对 Dirichlet 特征 \(\chi\)，定义 Dirichlet L 函数</p>
+
+  <div class="eq"><div class="tag">(4.4)</div>
+  \[ L(s,\chi)=\sum_{n=1}^{\infty}\frac{\chi(n)}{n^{s}}=\prod_{p}\left(1-\chi(p)p^{-s}\right)^{-1}. \]
+  </div>
+
+  <p>广义黎曼猜想（GRH）断言：所有 Dirichlet L 函数的非平凡零点也在 \(\operatorname{Re}(s)=1/2\) 上。它控制算术级数中素数的分布：在模 \(q\) 的每个可逆剩余类里，最小的素数有多大？GRH 给出 \(p(a,q)\ll q^{2+\varepsilon}\) 量级的界；无条件的 Linnik 定理只给出某个固定次幂（目前常数约在 5 附近），而且常数不明确。</p>
+
+  <p>GRH 的触角远不止于此。Chebotarev 密度定理的有效版本、二次域的类数下界、Artin 原根猜想、椭圆曲线上的点计数、乃至某些密码算法的安全性分析，都以 GRH 为条件。它不是一个“更难的练习题”，而是整个代数数论的条件性基础设施。</p>
+
+  <h2>4.4　算法与密码学：会破解 RSA 吗？</h2>
+
+  <p>这是公众最关心的问题，答案通常被误解。黎曼猜想<strong>不会</strong>直接破解 RSA。RSA 的安全性依赖于大整数分解的困难性，而 RH 并不给出分解算法；它影响的是某些数论算法的误差分析与参数选择。</p>
+
+  <p>一个具体的联系是素性测试。Miller–Rabin 算法在 GRH 下可以确定性地选取基底：只需检验所有 \(a\le 2(\log n)^2\)，就能判定 \(n\) 是否为素数。2002 年 AKS 算法给出了无条件的多项式时间素性测试，但常数较大；在实际应用中，GRH 仍然是一个有用的“性能假设”。此外，数域筛法的启发式复杂度分析、椭圆曲线方法的界、以及某些伪随机生成器的分析，都会用到 L 函数的零点信息。</p>
+
+  <p>真正会威胁 RSA 的是量子计算机上的 Shor 算法，而不是黎曼猜想。把两者混为一谈，是科普中常见的错误。</p>
+
+  <h2>4.5　数学版图：数千条定理的“总开关”</h2>
+
+  <p>据不完全统计，数学文献中有数千条定理以 RH 或 GRH 为条件。它们分布在解析数论、代数数论、算术几何、概率数论、计算复杂性乃至数学物理中。一旦 RH 被证明，这些定理会在一夜之间变成无条件结果；一旦 RH 被推翻，它们中的大部分会失去基础，但素数定理、无零区域、临界线比例等“弱版本”仍然成立。</p>
+
+  <p>2026 年 11 月，智利天主教大学的 Hector Pasten 在评论 Alpöge–Claude 证明时说，如果证明正确且被理解，它将“补全不同数学分支之间的词典，就像一块罗塞塔石碑”。这句话抓住了 RH 的真正分量：它不仅是一个定理，更是一个翻译器，把素数、L 函数、谱、正性、随机矩阵这些语言连接起来。</p>
+
+  <table>
+    <thead><tr><th style="width:22%">领域</th><th style="width:39%">RH / GRH 条件下</th><th>目前无条件</th></tr></thead>
+    <tbody>
+      <tr><td class="k">素数计数</td><td>\(\pi(x)=\operatorname{li}(x)+O(\sqrt{x}\log x)\)</td><td>Korobov–Vinogradov 误差，远大于 \(\sqrt{x}\)</td></tr>
+      <tr><td class="k">相邻素数间隙</td><td>\(O(\sqrt{p_n}\log p_n)\)</td><td>Baker–Harman–Pintz \(O(p_n^{0.525})\)</td></tr>
+      <tr><td class="k">短区间素数</td><td>长度 \(\sqrt{x}\log x\)</td><td>Guth–Maynard \(x^{17/30+o(1)}\)</td></tr>
+      <tr><td class="k">算术级数最小素数</td><td>\(\ll q^{2+\varepsilon}\)</td><td>Linnik 定理，常数次幂但常数不明确</td></tr>
+      <tr><td class="k">确定性素性测试</td><td>Miller–Rabin 取 \(a\le 2\log^2 n\)</td><td>AKS 多项式时间，常数较大</td></tr>
+      <tr><td class="k">二次域类数</td><td>有效的下界</td><td>部分结果，仍有 Siegel 零点障碍</td></tr>
+      <tr><td class="k">Artin 原根</td><td>条件性密度公式</td><td>部分无条件情形，密度仍未完全解决</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box">
+    <span class="label">一句话</span>
+    <p>黎曼猜想之所以重要，不是因为它能立刻“用”来做什么，而是因为它是素数分布误差的总开关。它把“素数看起来随机”这件事，变成了一个可以精确量化、可以证明、也可以被推翻的数学命题。</p>
+  </div>
+
+  <h2>4.6　小结：一个总开关</h2>
+
+  <p>把这一章压缩成一句话：黎曼猜想是素数分布误差的总开关。它向上连接着最抽象的 L 函数与谱理论，向下连接着最具体的算法参数与密码学分析。它一旦被证明，数千条条件性定理会同时解锁；它一旦被推翻，数学不会崩溃，但我们会失去一张过于美丽的地图。</p>
+
+  <p>无论哪种结果，它都值得被认真对待——不是因为它值 100 万美元，而是因为它决定了我们能否真正理解素数的秩序。一个关于复平面上一条线的猜想，最终变成了关于“随机性有多随机”的追问；这正是基础数学最迷人的地方：最抽象的对象，往往藏着最具体的答案。</p>
+</section>

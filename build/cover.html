@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>黎曼猜想全景报告</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 210mm; height: 297mm; }
+  body {
+    background: #101d2d;
+    font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+    color: #f6f2e9;
+    position: relative;
+    overflow: hidden;
+  }
+  .art {
+    position: absolute;
+    top: 0; right: 0;
+    width: 52%; height: 100%;
+    background-image: url("figs/fig1_domain.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+  }
+  .shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #101d2d 0%, #101d2d 38%, rgba(16,29,45,0.92) 50%, rgba(16,29,45,0.38) 74%, rgba(16,29,45,0.62) 100%);
+  }
+  .grain {
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 28% 42%, rgba(154,107,47,0.16), transparent 45%);
+  }
+  .content {
+    position: absolute;
+    left: 20mm; top: 22mm; bottom: 20mm;
+    width: 100mm;
+    display: flex;
+    flex-direction: column;
+  }
+  .kicker {
+    font-family: "Cambria", serif;
+    font-size: 8.2pt;
+    letter-spacing: 0.26em;
+    color: #c9a875;
+    text-transform: uppercase;
+  }
+  .rule {
+    width: 52px; height: 2.2px;
+    background: #9a6b2f;
+    margin: 14px 0 22px 0;
+  }
+  h1 {
+    font-size: 54pt;
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+  }
+  h1 .thin {
+    display: block;
+    font-size: 31pt;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    color: #e8dfcd;
+    margin-top: 8px;
+  }
+  .en {
+    margin-top: 16px;
+    font-family: "Cambria", serif;
+    font-style: italic;
+    font-size: 13pt;
+    line-height: 1.5;
+    color: #c9a875;
+  }
+  .desc {
+    margin-top: 26px;
+    font-size: 10.2pt;
+    line-height: 1.95;
+    color: #e4ddcf;
+    max-width: 88mm;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.35);
+  }
+  .desc strong { color: #ffffff; font-weight: 700; }
+  .spacer { flex: 1; }
+  .bottom {
+    border-top: 0.7px solid rgba(201,168,117,0.35);
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 78mm;
+    font-size: 8.2pt;
+    color: #a9b2bd;
+    line-height: 1.6;
+  }
+  .bottom .date {
+    font-family: "Cambria", serif;
+    font-size: 9.2pt;
+    color: #e2c79a;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+  .vertical {
+    position: absolute;
+    right: 7mm; bottom: 22mm;
+    writing-mode: vertical-rl;
+    font-family: "Cambria", serif;
+    font-size: 8.5pt;
+    letter-spacing: 0.35em;
+    color: rgba(246,242,233,0.55);
+  }
+</style>
+</head>
+<body>
+  <div class="art"></div>
+  <div class="shade"></div>
+  <div class="grain"></div>
+
+  <div class="content">
+    <div class="kicker">Comprehensive Report · Mathematics</div>
+    <div class="rule"></div>
+    <h1>黎曼猜想<span class="thin">全景报告</span></h1>
+    <div class="en">The Riemann Hypothesis<br>From an Eight-Page Paper to a Formal Proof</div>
+    <div class="desc">
+      从 <strong>1859 年</strong>黎曼的八页论文，到 <strong>2026 年</strong>通过的 1700 万行 Lean 形式化证明——
+      一部关于素数、零点、随机矩阵与机器验证的完整叙事。
+    </div>
+    <div class="spacer"></div>
+    <div class="bottom">
+      <div>含 2026 年 11 月<br>Alpöge–Claude 证明事件全记录</div>
+      <div class="date">2026 · 11 · 26</div>
+    </div>
+  </div>
+  <div class="vertical">RIEMANN · 1859 — 2026</div>
+</body>
+</html>

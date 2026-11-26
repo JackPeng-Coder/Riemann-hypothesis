@@ -1,0 +1,25 @@
+# build artifacts
+build/body.html
+build/body_pass1.html
+build/body.pdf
+build/cover.pdf
+build/figs.log
+
+# local tests / QA
+build/test.html
+build/test.pdf
+build/test_pipeline.py
+build/qa.py
+build/qa2.py
+build/qa/
+build/qa2/
+build/f2*.png
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store

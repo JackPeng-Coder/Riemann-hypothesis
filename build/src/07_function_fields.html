@@ -1,0 +1,56 @@
+<section class="chapter" id="ch07">
+  <div class="chapter-head">
+    <div class="num">07</div>
+    <div class="kicker">Chapter Seven</div>
+    <h1>函数域上的成功</h1>
+    <div class="en">The Function Field Case</div>
+  </div>
+
+  <p class="lead">在另一条战线上，黎曼猜想已经被证明了。不是对整数，而是对有限域上的曲线与簇。这个成功既是鼓舞，也是镜子：它告诉我们，一个“正确的证明”可能长什么样。</p>
+
+  <h2>7.1　Weil 与有限域上的曲线</h2>
+
+  <p>设 \(C\) 是有限域 \(\mathbb{F}_q\) 上的一条光滑射影曲线，\(N_n\) 是它在这个域的第 \(n\) 次扩张上的点数。定义曲线的 ζ 函数</p>
+
+  <div class="eq"><div class="tag">(7.1)</div>
+  \[ Z_C(T)=\exp\!\left(\sum_{n=1}^{\infty}N_n\frac{T^{n}}{n}\right). \]
+  </div>
+
+  <p>它可以写成一个有理函数</p>
+
+  <div class="eq"><div class="tag">(7.2)</div>
+  \[ Z_C(T)=\frac{P_1(T)}{(1-T)(1-qT)},\qquad P_1(T)=\prod_{i=1}^{2g}\left(1-\alpha_iT\right), \]
+  </div>
+
+  <p>其中 \(g\) 是曲线的亏格。函数域上的“黎曼猜想”断言：所有 Frobenius 特征值 \(\alpha_i\) 都满足</p>
+
+  <div class="eq"><div class="tag">(7.3)</div>
+  \[ |\alpha_i|=q^{1/2}. \]
+  </div>
+
+  <p>这正是整数情形中“零点实部为 \(1/2\)”的类比：把 \(T=q^{-s}\) 代入，\(|\alpha_i|=q^{1/2}\) 就变成 \(\operatorname{Re}(s)=1/2\)。Weil 在 1940 年代证明了曲线情形；1974 年，Deligne 证明了更高维簇上的 Weil 猜想，其中包括一般的黎曼猜想。这是二十世纪数学最伟大的成就之一。</p>
+
+  <h2>7.2　为什么函数域容易</h2>
+
+  <p>函数域的证明有一个整数情形完全缺失的核心物件：Frobenius 自同态。它作用于曲线的上同调群，特征值就是 \(\alpha_i\)。Weil 猜想的证明可以概括为三步：建立合适的上同调理论（étale cohomology），证明 Frobenius 作用其上，再用代数几何中的正性（相交理论、Hodge 理论）控制特征值的绝对值。</p>
+
+  <p>换句话说，函数域的 RH 不是一个“分析估计”问题，而是一个“几何—线性代数”问题。你有一个具体的算子，有一个有限的谱，有一个正定的配对；剩下的就是证明谱落在一条线上。整数情形缺少的正是这套几何机器：\(\operatorname{Spec}\mathbb{Z}\) 不是一个有限域上的曲线，没有 Frobenius，没有现成的上同调。</p>
+
+  <h2>7.3　\(\mathbb{F}_1\)：把整数看成一条曲线</h2>
+
+  <p>数学家很自然地猜测：\(\operatorname{Spec}\mathbb{Z}\) 应该像一条定义在“一个元素的域” \(\mathbb{F}_1\) 上的曲线。如果这个类比能够严格化，整数素数就对应曲线上的点，ζ 函数就对应曲线的 Zeta 函数，Weil 的证明策略也许可以搬过来。这个想法被称为“\(\mathbb{F}_1\) 几何”，吸引了 Connes、Consani、Deninger、Kurokawa 等人投入多年。</p>
+
+  <p>但 \(\mathbb{F}_1\) 至今没有公认的定义。已有的候选框架（如 Connes–Consani 的算术 site、Deninger 的算术上同调）都能复现部分现象，却不足以给出完整的证明。这个方向的价值，不在于它已经解决了问题，而在于它指出了问题“应该”属于哪一类：黎曼猜想可能需要一种新的几何，而不是一条更精细的解析估计。</p>
+
+  <h2>7.4　函数域教给我们的三件事</h2>
+
+  <ul>
+    <li><strong>正确的证明可能是几何的。</strong> Weil 与 Deligne 的证明没有依赖复杂的零点估计，而是构造了正确的上同调与正性结构。</li>
+    <li><strong>“谱”必须来自一个具体的算子。</strong> Frobenius 的存在让特征值问题变得可操作；整数情形缺少这个算子，这正是 Hilbert–Pólya 路线的困难所在。</li>
+    <li><strong>类比不是证明。</strong> 函数域的成功解释了 RH 为什么“应该”成立，却不能直接推出整数情形。两者之间隔着一整个“未建成的几何”。</li>
+  </ul>
+
+  <p>2026 年的形式化证明是否提供了这套几何？目前公开的信息还不足以判断。Rubinstein 的 265 页解读把证明归结为十三条用经典语言陈述的假设，其中一些涉及素数幂上的加权和与 Dirichlet 特征估计。它看起来更像是一条新的解析—算术路线，而不是函数域几何的直接移植。真正的答案，要等到人类把 1700 万行代码读懂之后才会浮现。</p>
+
+  <div class="pull">函数域的 RH 是一个定理；整数域的 RH 是一个关于“缺失的几何”的问题。</div>
+</section>
